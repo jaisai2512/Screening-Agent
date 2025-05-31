@@ -60,10 +60,12 @@ Respond to dynamically generated questions crafted by the AI model.
 - Manages environment variables securely.
 ### Model Details
 
-Utilizes Groq(meta-llama/llama-4-scout-17b-16e-instruct) for generating content and evaluating candidates.
+Utilizes Groq(meta-llama/llama-4-scout-17b-16e-instruct) for generating content.
 
 Modular design with an Agents class to encapsulate API interactions.
 Session management using st.session_state for seamless user experience.
+### Architectural Decisions
+![Chatbot Workflow](Screening.png)
 ### Prompt Design
 #### Information Gathering
 Prompts are designed to elicit precise and structured responses. For example:
