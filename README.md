@@ -74,7 +74,7 @@ Session management using st.session_state for seamless user experience.
 ### Prompt Design
 #### Information Gathering
 Prompts are structured to keep the user on task, and upon receiving a response, the prompt makes the  system records the answer.
--Example:
+#Example:
   - assistant : What is your full name?
   - user : John
   - assistant : save:John
