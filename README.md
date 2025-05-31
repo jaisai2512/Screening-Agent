@@ -66,12 +66,19 @@ Modular design with an Agents class to encapsulate API interactions.
 Session management using st.session_state for seamless user experience.
 ### Architectural Decisions
 ![Chatbot Workflow](Screening.png)
+### Step-by-Step Flow
+- The system greets the user and explains its purpose.
+- As the user begins providing the requested details, the system collects the inputs.
+- During the chat interaction, each piece of information entered by the user is stored in the session state.
+- Based on the user's specified skills, relevant questions are generated and presented. The user's responses are also stored in the session state.
 ### Prompt Design
 #### Information Gathering
-Prompts are designed to elicit precise and structured responses. For example:
-
-- Prompt for name: "What is your full name?"
-- Prompt for skills: "What is your tech stack (e.g., Python, Django, SQL)?"
+Prompts are structured to keep the user on task, and upon receiving a response, the prompt makes the  system records the answer.
+Example:
+ - assistant : What is your full name?
+ - user : John
+ - assistant : save:John
+ - The system save the name to the session state
 #### Dynamic Question Generation
 
 ##### Prompt Design for Question Generation
@@ -114,4 +121,9 @@ The next four questions increase in complexity, gradually testing the candidate'
 ##### Challenge 
 - Crafting effective prompts for diverse user inputs.
 ##### Solution 
-- Iterated on prompts to balance specificity and adaptability for varied responses.
+- Assigning different prompts to corresponding fields
+
+### Future Upgradation
+- Allowing users to edit their submitted answers.(Only the personal information)
+- Persisting state in the database to allow users to resume after a hard refresh.
+- Updating the system to follow a prompt-based and rule-driven approach.
